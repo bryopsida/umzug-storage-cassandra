@@ -3,8 +3,8 @@ services:
   sut:
     build: .
     command: './runTest.sh'
-    environment: 
-    - CODECOV_TOKEN
+    volumes:
+      - ./coverage:/app/coverage
     depends_on:
     - node
     networks:

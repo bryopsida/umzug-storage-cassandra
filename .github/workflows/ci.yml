@@ -15,6 +15,7 @@ jobs:
         run: |
             docker-compose --file docker-compose.test.yml build
             docker-compose --file docker-compose.test.yml run sut
+            npm run reporter
   publish-npm:
     if: github.event_name == 'release' && github.event.action == 'created'
     needs: test
