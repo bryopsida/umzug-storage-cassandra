@@ -44,16 +44,18 @@ describe( 'cassandraStorage', async () => {
     describe('executed', async () => {
         it('Should return all of the migrations', async ()=>{
             const storage:CassandraStorage = new CassandraStorage(cassandraClient);
-            const migrations:string[] = await storage.executed();
+            let migrations:string[] = await storage.executed();
 
             // assert none
             assert.strictEqual(migrations.length, 0);
             await storage.logMigration("TEST_MIGRATION");
 
+            migrations = await storage.executed();
             // assert present
             assert.strictEqual(migrations.indexOf('TEST_MIGRATION'), 0);
 
             await storage.unlogMigration("TEST_MIGRATION");
+            migrations = await storage.executed();
 
             // assert not present
             assert.strictEqual(migrations.indexOf('TEST_MIGRATION'), -1);
