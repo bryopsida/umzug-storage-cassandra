@@ -4,8 +4,9 @@ services:
     build: .
     command: './runTest.sh'
     volumes:
-      - ./coverage:/app/coverage
-      - ./.nyc_output:/app/.nyc_output
+      - ./.git:/app/.git
+    environment: 
+    - CODECOV_TOKEN
     depends_on:
     - node
     networks:
