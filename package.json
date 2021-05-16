@@ -7,6 +7,7 @@
     "lint": "eslint src --ext .ts",
     "lint:fix": "npm run lint -- --fix",
     "test": "nyc mocha --require ts-node/register --require source-map-support/register --recursive 'test/**/*.ts' --timeout 60000",
+    "report": "nyc report --reporter=lcov && ./node_modules/.bin/codecov",
     "compile": "node_modules/typescript/bin/tsc --project ./",
     "clean": "rm -fr build"
   },
@@ -33,6 +34,7 @@
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.23.0",
     "cassandra-driver": "^4.6.2",
+    "codecov": "^3.8.2",
     "eslint": "^7.25.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",

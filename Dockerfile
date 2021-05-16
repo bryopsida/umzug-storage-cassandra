@@ -1,5 +1,5 @@
 FROM node:lts-alpine
-RUN apk add --no-cache bash curl
+RUN apk add --no-cache bash curl git
 COPY . .
 RUN npm install
 RUN npm run compile
