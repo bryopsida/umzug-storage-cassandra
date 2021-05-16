@@ -5,6 +5,7 @@ services:
     command: './runTest.sh'
     volumes:
       - ./coverage:/app/coverage
+      - ./.nyc_output:/app/.nyc_output
     depends_on:
     - node
     networks:
