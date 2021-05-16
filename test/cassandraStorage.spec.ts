@@ -20,6 +20,11 @@ before(async ()=>{
     await noKeySpacecassandraClient.execute(`DROP TABLE IF EXISTS umzug.migrations`)
 })
 
+after(async ()=> {
+    await cassandraClient.shutdown();
+    await noKeySpacecassandraClient.shutdown();
+})
+
 describe( 'cassandraStorage', async () => {
     describe('logMigration', async () => {
         it('Should log migrations in the table', async ()=>{
