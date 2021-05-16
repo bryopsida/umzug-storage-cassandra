@@ -1,0 +1,48 @@
+version: '2'
+services:
+  sut:
+    build: .
+    command: './runTest.sh'
+    depends_on:
+    - node
+    networks:
+    - test
+  seed_node:
+    image: "datastax/dse-server:6.0.16"
+    environment:
+      - DS_LICENSE=accept
+    # Allow DSE to lock memory with mlock
+    cap_add:
+    - IPC_LOCK
+    ulimits:
+      memlock: -1
+    expose:
+    - 7199
+    - 7000
+    - 7001
+    - 9042
+    - 9160
+    networks:
+    - test
+  node:
+    image: "datastax/dse-server:6.0.16"
+    environment:
+      - DS_LICENSE=accept
+      - SEEDS=seed_node
+    links:
+      - seed_node
+    # Allow DSE to lock memory with mlock
+    cap_add:
+    - IPC_LOCK
+    ulimits:
+      memlock: -1
+    expose:
+    - 7199
+    - 7000
+    - 7001
+    - 9042
+    - 9160
+    networks: 
+    - test
+networks:
+  test:

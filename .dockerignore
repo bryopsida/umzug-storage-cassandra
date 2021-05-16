@@ -1,0 +1,12 @@
+.dockerignore
+node_modules
+npm-debug.log
+Dockerfile
+.git
+.gitignore
+.scannerwork
+.nyc_output
+.coverage
+n1data
+n2data
+n3data

@@ -1,0 +1,50 @@
+{
+  "name": "umzug-storage-cassandra",
+  "version": "0.1.0",
+  "description": "Umzug storage module for apache cassandra",
+  "main": "build/index.js",
+  "scripts": {
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "nyc mocha --require ts-node/register --require source-map-support/register --recursive 'test/**/*.ts' --timeout 60000",
+    "compile": "node_modules/typescript/bin/tsc --project ./",
+    "clean": "rm -fr build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akboyd88/umzug-storage-cassandra.git"
+  },
+  "keywords": [
+    "cassandra",
+    "umzug",
+    "migration",
+    "storage"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akboyd88/umzug-storage-cassandra/issues"
+  },
+  "homepage": "https://github.com/akboyd88/umzug-storage-cassandra#readme",
+  "devDependencies": {
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^15.0.1",
+    "@types/umzug": "^2.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.23.0",
+    "cassandra-driver": "^4.6.2",
+    "eslint": "^7.25.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^8.3.2",
+    "nyc": "^15.1.0",
+    "source-map-support": "^0.5.19",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "umzug": "^2.3.0"
+  }
+}
