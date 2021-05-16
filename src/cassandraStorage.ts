@@ -48,7 +48,7 @@ export class CassandraStorage implements umzug.Storage {
     private async ensureMigrationTable() {
         await this._client.execute(`CREATE TABLE IF NOT EXISTS migrations ( 
             name text PRIMARY KEY, 
-            timestamp int );`);
+            timestamp bigint );`);
     }
     /**
      * Add a migration ot the migration log in the storage
