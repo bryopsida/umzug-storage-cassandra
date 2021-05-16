@@ -28,14 +28,18 @@ after(async ()=> {
 describe( 'cassandraStorage', async () => {
     describe('logMigration', async () => {
         it('Should log migrations in the table', async ()=>{
-            const storage:CassandraStorage = new CassandraStorage(cassandraClient);
+            const storage:CassandraStorage = new CassandraStorage({
+                client: cassandraClient
+            });
             await storage.logMigration("TEST_MIGRATION");
 
         })
     });
     describe('unlogMigration', async () => {
         it('Should remove migrations from the table', async ()=>{
-            const storage:CassandraStorage = new CassandraStorage(cassandraClient);
+            const storage:CassandraStorage = new CassandraStorage({
+                client: cassandraClient
+            });
             await storage.unlogMigration("TEST_MIGRATION");
 
 
@@ -43,7 +47,9 @@ describe( 'cassandraStorage', async () => {
     });
     describe('executed', async () => {
         it('Should return all of the migrations', async ()=>{
-            const storage:CassandraStorage = new CassandraStorage(cassandraClient);
+            const storage:CassandraStorage = new CassandraStorage({
+                client: cassandraClient
+            });
             let migrations:string[] = await storage.executed();
 
             // assert none

@@ -10,6 +10,11 @@ interface CassandraMigrationRecord {
     name: string;
     timestamp: number;
 }
+
+export interface CassandraStorageOptions {
+    client: Client
+}
+
 /**
  * Umzug storage class for apache cassandra
  */
@@ -24,10 +29,10 @@ export class CassandraStorage implements umzug.Storage {
     /**
      *  Build a object for handling umzsug storage with
      * a cassandra backend
-     * @param {Client} cassandraClient 
+     * @param {CassandraStorageOptions} options 
      */
-    constructor(cassandraClient: Client) {
-        this._client = cassandraClient;
+    constructor(options:CassandraStorageOptions) {
+        this._client = options.client;
         this._mapper = new mapping.Mapper(this._client, {
             models: { 
                 'Migrations': {

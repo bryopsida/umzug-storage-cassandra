@@ -15,7 +15,7 @@ Once installed you can pass it to umzug like this:
 
 ``` typescript
 import {Client} from 'cassandra-driver';
-import {CassandraStorage} from '../src/cassandraStorage';
+import {CassandraStorage} from 'umzug-storage-cassandra';
 
 const cassandraClient:Client = new Client({
     contactPoints: ['node'],
@@ -23,7 +23,13 @@ const cassandraClient:Client = new Client({
     keyspace: 'umzug'
 });
 
-const cassandraStorage:CassandraStorage = new CassandraStorage(cassandraClient);
+const cassandraStorage:CassandraStorage = new CassandraStorage({
+    client: cassandraClient
+})
+
+const umzugOptions = {
+  storage: cassandraStorage
+}
 
 ```
 
