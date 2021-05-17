@@ -1,7 +1,7 @@
 # umzug-storage-cassandra
 
 ## Badges
-![Codecov](https://img.shields.io/codecov/c/github/akboyd88/umzug-storage-cassandra?style=for-the-badge)
+![Codecov](https://img.shields.io/codecov/c/github/akboyd88/umzug-storage-cassandra?style=for-the-badge)![GitHub](https://img.shields.io/github/license/akboyd88/umzug-storage-cassandra?style=for-the-badge)![Codacy grade](https://img.shields.io/codacy/grade/300838852e9642ab937300be2ad611b0?style=for-the-badge)![npm](https://img.shields.io/npm/v/umzug-storage-cassandra?style=for-the-badge)![GitHub package.json version](https://img.shields.io/github/package-json/v/akboyd88/umzug-storage-cassandra?style=for-the-badge)
 
 ## Summary
 
