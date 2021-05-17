@@ -1,6 +1,6 @@
 {
   "name": "umzug-storage-cassandra",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Umzug storage module for apache cassandra",
   "main": "build/src/cassandraStorage.js",
   "scripts": {
