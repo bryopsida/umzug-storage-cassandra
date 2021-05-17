@@ -1,7 +1,7 @@
 # umzug-storage-cassandra
 
 ## Badges
-
+![Codecov](https://img.shields.io/codecov/c/github/akboyd88/umzug-storage-cassandra?style=for-the-badge)
 
 ## Summary
 
