@@ -1,6 +1,6 @@
 {
   "name": "umzug-storage-cassandra",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Umzug storage module for apache cassandra",
   "main": "build/src/cassandraStorage.js",
   "scripts": {
@@ -11,6 +11,9 @@
     "compile": "node_modules/typescript/bin/tsc --project ./",
     "clean": "rm -fr build"
   },
+  "files": [
+    "“build/**/*”"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akboyd88/umzug-storage-cassandra.git"
