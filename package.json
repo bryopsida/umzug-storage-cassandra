@@ -2,7 +2,7 @@
   "name": "umzug-storage-cassandra",
   "version": "0.1.0",
   "description": "Umzug storage module for apache cassandra",
-  "main": "build/index.js",
+  "main": "build/src/cassandraStorage.js",
   "scripts": {
     "lint": "eslint src --ext .ts",
     "lint:fix": "npm run lint -- --fix",
