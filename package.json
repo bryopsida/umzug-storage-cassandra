@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/akboyd88/umzug-storage-cassandra#readme",
   "devDependencies": {
-    "@types/mocha": "^8.2.2",
+    "@types/mocha": "^9.1.0",
     "@types/node": "^16.4.8",
     "@types/umzug": "^2.3.0",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
